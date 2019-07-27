@@ -1,4 +1,9 @@
-#  Solution to Project Euler Problem 13
+'''
+Large sum
+
+https://projecteuler.net/problem=13
+'''
+
 
 NUMBERS = [
     37107287533902102798797998220837590246510135740250,
@@ -103,8 +108,10 @@ NUMBERS = [
 	53503534226472524250874054075591789781264330331690,
 ]
 
+
 def sol():
     return str(sum(NUMBERS))[:10]
+
 
 if __name__ == "__main__":
     print(sol())
