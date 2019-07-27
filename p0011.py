@@ -1,4 +1,9 @@
-#  Solution to Project Euler Problem 11
+'''
+Largest product in a grid
+
+https://projecteuler.net/problem=11
+'''
+
 
 GRID = [
         [ 8, 2,22,97,38,15, 0,40, 0,75, 4, 5, 7,78,52,12,50,77,91, 8],
@@ -24,6 +29,7 @@ GRID = [
 ]
 CONSECUTIVE = 4
 
+
 def sol():
     ans = -1
     width = len(GRID[0])
@@ -40,11 +46,13 @@ def sol():
                 ans = max(grid_product(x, y, -1, 1, CONSECUTIVE), ans)
     return str(ans)
 
+
 def grid_product(x, y, dx, dy, n):
     result = 1
     for i in range(n):
         result *= GRID[y + i * dy][x + i * dx]
     return result
+
 
 if __name__ == "__main__":
     print(sol())
