@@ -21,20 +21,20 @@ fi
 
 ## Python
 if [[ $language -eq 1 ]]; then
-  echo "\"\"\"" >> p$(printf %04d $number).py
-  echo "$name" >> p$(printf %04d $number).py
-  echo "Problem $number" >> p$(printf %04d $number).py
-  echo "" >> p$(printf %04d $number).py
-  echo "https://projecteuler.net/problem=$number" >> p$(printf %04d $number).py
-  echo "\"\"\"" >> p$(printf %04d $number).py
-  echo "" >> p$(printf %04d $number).py
-  echo "" >> p$(printf %04d $number).py
-  echo "def sol():" >> p$(printf %04d $number).py
-  echo "    print(\"hello\")" >> p$(printf %04d $number).py
-  echo "" >> p$(printf %04d $number).py
-  echo "" >> p$(printf %04d $number).py
-  echo "if __name__ == \"__main__\":" >> p$(printf %04d $number).py
-  echo "    sol()" >> p$(printf %04d $number).py
+  echo "\"\"\"" >> python/p$(printf %04d $number).py
+  echo "$name" >> python/p$(printf %04d $number).py
+  echo "Problem $number" >> python/p$(printf %04d $number).py
+  echo "" >> python/p$(printf %04d $number).py
+  echo "https://projecteuler.net/problem=$number" >> python/p$(printf %04d $number).py
+  echo "\"\"\"" >> python/p$(printf %04d $number).py
+  echo "" >> python/p$(printf %04d $number).py
+  echo "" >> python/p$(printf %04d $number).py
+  echo "def sol():" >> python/p$(printf %04d $number).py
+  echo "    print(\"hello\")" >> python/p$(printf %04d $number).py
+  echo "" >> python/p$(printf %04d $number).py
+  echo "" >> python/p$(printf %04d $number).py
+  echo "if __name__ == \"__main__\":" >> python/p$(printf %04d $number).py
+  echo "    sol()" >> python/p$(printf %04d $number).py
 fi
 
 echo "DONE! LET'S SOLVE THE PROBLEM! - $name"
