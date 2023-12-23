@@ -54,6 +54,7 @@ if [[ $language -eq 2 ]]; then
   echo "end" >> elixir/p$(printf %04d $number).ex
   echo "" >> elixir/p$(printf %04d $number).ex
   echo "P$(printf %04d $number).solve()" >> elixir/p$(printf %04d $number).ex
+  echo "|> IO.puts()" >> elixir/p$(printf %04d $number).ex
 fi
 
 echo "DONE! LET'S SOLVE THE PROBLEM! - $name"
