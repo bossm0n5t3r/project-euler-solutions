@@ -10,11 +10,11 @@ defmodule P0004 do
     Enum.to_list(100..999)
     |> Enum.map(fn x -> Enum.to_list(100..999) |> Enum.map(fn y -> x * y end) end)
     |> List.flatten()
-    |> Enum.filter(&is_palindrome/1)
+    |> Enum.filter(&is_palindrome?/1)
     |> Enum.max()
   end
 
-  def is_palindrome(num) do
+  def is_palindrome?(num) do
     Integer.to_string(num) == Integer.to_string(num) |> String.reverse()
   end
 end
