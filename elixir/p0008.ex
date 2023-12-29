@@ -9,7 +9,8 @@ defmodule P0008 do
   """
 
   def solve() do
-    FileUtil.read_file("p0008.txt")
+    FileUtil.read_text("p0008.txt")
+    |> String.replace("\n", "")
     |> string_to_integer_list_using_codepoints
     # |> string_to_integer_list_using_charlist # or use this
     |> Enum.chunk_every(13, 1, :discard)

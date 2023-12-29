@@ -1,10 +1,11 @@
 defmodule FileUtil do
-  def read_file(filename) do
+  @spec read_text(String.t()) :: String.t()
+  def read_text(filename) do
     path = Path.expand("../resources/#{filename}", __DIR__)
 
     case File.read(path) do
       {:ok, lines} ->
-        lines |> String.replace("\n", "")
+        lines
 
       {:error, _} ->
         IO.puts("Error: #{filename} file not found")
