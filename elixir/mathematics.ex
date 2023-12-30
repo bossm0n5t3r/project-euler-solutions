@@ -11,4 +11,12 @@ defmodule Mathematics do
       Enum.all?(2..trunc(:math.sqrt(num)), fn x -> rem(num, x) != 0 end)
     end
   end
+
+  def factorial(n) when n > 1 do
+    n * factorial(n - 1)
+  end
+
+  def factorial(1), do: 1
+
+  def combination(n, r), do: div(factorial(n), factorial(r) * factorial(n - r))
 end
