@@ -38,4 +38,12 @@ defmodule Mathematics do
       end
     end)
   end
+
+  def get_all_permutations([]) do
+    [[]]
+  end
+
+  def get_all_permutations(list) do
+    for h <- list, t <- get_all_permutations(list -- [h]), do: [h | t]
+  end
 end
