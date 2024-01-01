@@ -23,8 +23,19 @@ defmodule Mathematics do
   def get_sum_of_proper_divisors(num) when num == 1, do: 0
 
   def get_sum_of_proper_divisors(num) do
-    1..(num - 1)
-    |> Enum.filter(fn x -> rem(num, x) == 0 end)
-    |> Enum.sum()
+    root = trunc(:math.sqrt(num))
+
+    1..root
+    |> Enum.reduce(0, fn x, acc ->
+      if rem(num, x) == 0 do
+        if x == 1 or (x == root and root * root == num) do
+          acc + x
+        else
+          acc + x + div(num, x)
+        end
+      else
+        acc
+      end
+    end)
   end
 end
