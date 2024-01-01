@@ -1,3 +1,5 @@
+Code.require_file("./mathematics.ex", __DIR__)
+
 defmodule P0021 do
   @moduledoc """
   Amicable Numbers
@@ -16,7 +18,7 @@ defmodule P0021 do
   end
 
   def get_all_amicable_numbers([num | remained_candidates], candidates_set, result_set) do
-    sum_of_proper_divisors = get_sum_of_proper_divisors(num)
+    sum_of_proper_divisors = Mathematics.get_sum_of_proper_divisors(num)
 
     if sum_of_proper_divisors == num do
       get_all_amicable_numbers(
@@ -26,7 +28,8 @@ defmodule P0021 do
       )
     else
       if MapSet.member?(candidates_set, sum_of_proper_divisors) do
-        reversed_sum_of_proper_divisors = get_sum_of_proper_divisors(sum_of_proper_divisors)
+        reversed_sum_of_proper_divisors =
+          Mathematics.get_sum_of_proper_divisors(sum_of_proper_divisors)
 
         if reversed_sum_of_proper_divisors == num do
           get_all_amicable_numbers(
@@ -47,14 +50,6 @@ defmodule P0021 do
 
   def get_all_amicable_numbers([], _candidates_set, result_set) do
     result_set
-  end
-
-  def get_sum_of_proper_divisors(num) when num == 1, do: 0
-
-  def get_sum_of_proper_divisors(num) do
-    1..(num - 1)
-    |> Enum.filter(fn x -> rem(num, x) == 0 end)
-    |> Enum.sum()
   end
 end
 
