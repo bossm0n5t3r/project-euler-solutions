@@ -46,4 +46,10 @@ defmodule Mathematics do
   def get_all_permutations(list) do
     for h <- list, t <- get_all_permutations(list -- [h]), do: [h | t]
   end
+
+  def fib() do
+    Stream.unfold({0, 1}, fn {current, next} ->
+      {current, {next, current + next}}
+    end)
+  end
 end
