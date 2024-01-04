@@ -4,6 +4,8 @@ defmodule Mathematics do
 
   def lcm(a, b), do: div(a * b, gcd(a, b))
 
+  def is_prime?(num) when num <= 1, do: false
+
   def is_prime?(num) do
     if num == 2 or num == 3 do
       true
