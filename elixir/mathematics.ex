@@ -20,6 +20,8 @@ defmodule Mathematics do
 
   def factorial(1), do: 1
 
+  def factorial(0), do: 1
+
   def combination(n, r), do: div(factorial(n), factorial(r) * factorial(n - r))
 
   def get_sum_of_proper_divisors(num) when num == 1, do: 0
