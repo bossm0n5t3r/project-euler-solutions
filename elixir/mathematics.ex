@@ -56,4 +56,10 @@ defmodule Mathematics do
       {current, {next, current + next}}
     end)
   end
+
+  def is_composite?(num) when num <= 1, do: false
+
+  def is_composite?(num) do
+    !is_prime?(num)
+  end
 end
