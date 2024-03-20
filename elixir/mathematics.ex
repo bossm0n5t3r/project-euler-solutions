@@ -62,4 +62,8 @@ defmodule Mathematics do
   def is_composite?(num) do
     !is_prime?(num)
   end
+
+  def is_palindrome?(number) when is_number(number) do
+    Integer.to_string(number) == Integer.to_string(number) |> String.reverse()
+  end
 end
